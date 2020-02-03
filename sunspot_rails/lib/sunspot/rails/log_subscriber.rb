@@ -28,7 +28,7 @@ module Sunspot
 
       def request(event)
         self.class.runtime += event.duration
-        return unless logger.debug?
+        return unless logger.info?
 
         name = '%s (%.1fms)' % ["SOLR Request", event.duration]
 
@@ -41,7 +41,7 @@ module Sunspot
         }.join(', ')
         request = "path=#{path} parameters={#{parameters}}"
 
-        debug "  #{color(name, GREEN, true)}  [ #{request} ]"
+        info "  #{color(name, GREEN, true)}  [ #{request} ]"
       end
     end
   end
