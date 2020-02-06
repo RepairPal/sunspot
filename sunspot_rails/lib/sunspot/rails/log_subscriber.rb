@@ -28,7 +28,7 @@ module Sunspot
 
       def request(event)
         self.class.runtime += event.duration
-        return unless logger.info?
+        return unless logger.info? || logger.debug?
 
         name = '%s (%.1fms)' % ["SOLR Request", event.duration]
 
