@@ -39,7 +39,7 @@ module Sunspot
           v = v.to_s.gsub(/\\/,'') # unescape
           "#{k}: #{color(v, BOLD, true)}"
         }.join(', ')
-        request = "path=#{path} parameters={#{parameters}}"
+        request = "{path: '#{path}', parameters: {#{parameters}}"
 
         info "  #{color(name, GREEN, true)}  [ #{request} ]"
       end
